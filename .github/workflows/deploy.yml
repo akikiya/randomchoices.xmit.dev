@@ -21,4 +21,4 @@ jobs:
       - name: Build
         run: npx pnpm generate
       - name: Deploy
-        run: npx @xmit.co/xmit randomchoices.xmit.dev .output/public
+        run: npx @xmit.co/xmit randomchoices.xmit.dev@210 .output/public

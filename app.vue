@@ -11,9 +11,10 @@
     <section id="choices-section">
       <header>
         <h2>Your Choices</h2>
-        <p v-if="choices.length > 1">You have {{ choices.length }} choices</p>
-        <p v-else-if="choices.length === 1">You have {{ choices.length }} choice</p>
-        <p v-else>You have no choices</p>
+        <div class="choice-count">
+          <span>{{ choices.length }}</span>
+          <span>{{ choices.length > 1 ? 'choices' : 'choice' }}</span>
+        </div>
       </header>
       <section class="container">
         <p v-if="!choices.length">Your choices will appear here</p>
@@ -117,6 +118,33 @@ h2 {
 
 section {
   margin-bottom: 30px;
+}
+
+.choice-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.9rem;
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.choice-count span:first-child {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-right: 4px;
+}
+
+#choices-section header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
 }
 
 #input-section {

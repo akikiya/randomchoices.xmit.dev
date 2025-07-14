@@ -17,10 +17,12 @@ jobs:
         with:
           node-version: 22
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm install -g pnpm
+          pnpm install
       - name: Build
-        run: npm run generate
+        run: pnpm generate
       - name: Deploy
         run: |
-          npm install -g @xmit.co/xmit
+          pnpm install -g @xmit.co/xmit
           xmit randomchoices.xmit.dev .output/public

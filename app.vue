@@ -11,6 +11,9 @@
     <section id="choices-section">
       <header>
         <h2>Your Choices</h2>
+        <p v-if="choices.length > 1">You have {{ choices.length }} choices</p>
+        <p v-else-if="choices.length === 1">You have {{ choices.length }} choice</p>
+        <p v-else>You have no choices</p>
       </header>
       <section class="container">
         <p v-if="!choices.length">Your choices will appear here</p>

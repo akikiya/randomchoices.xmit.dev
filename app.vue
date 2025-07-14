@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <header>
-      <h1>RandomChoices</h1>
+      <h1>Random Choices</h1>
       <p>Make decisions easily with random selection</p>
     </header>
-    <section id="input-section">
+    <form action="javascript:void(0);" @submit.prevent="addChoice" id="input-section">
       <input type="text" placeholder="Enter your choices (one at a time)" v-model="inputValue">
-      <button type="button" @click="addChoice">Add</button>
-    </section>
+      <button type="submit">Add</button>
+    </form>
     <section id="choices-section">
       <header>
         <h2>Your Choices</h2>
@@ -39,7 +39,6 @@
       </section>
     </section>
   </div>
-
 </template>
 
 <script setup lang="ts">
